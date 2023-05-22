@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios Registrados</title>
+    <link rel="stylesheet" href="assets/css/tables.css">
+  </head>
+<body>
+  <div class="div1"><h1>Usuarios Registrados</h1></div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre de Usuario</th>
+        <th>Contraseña</th>
+      </tr>
+    </thead>
+    <tbody id="userTableBody">
+      <!-- Aquí se agregarán dinámicamente los usuarios -->
+    </tbody>
+  </table>
+
+  <script>
+    // Obtén la referencia al cuerpo de la tabla
+    const userTableBody = document.getElementById('userTableBody');
+
+    // Obtén los datos de los usuarios de la variable de servidor "usersData" (reemplaza "usersData" con el nombre real de tu variable)
+    const users = JSON.parse('<%- JSON.stringify(usersData) %>');
+
+
+    // Recorre los usuarios y agrega cada uno a la tabla
+    users.forEach(user => {
+      const row = document.createElement('tr');
+      const usernameCell = document.createElement('td');
+      const passwordCell = document.createElement('td');
+
+      usernameCell.textContent = user.username;
+      passwordCell.textContent = user.password;
+
+      row.appendChild(usernameCell);
+      row.appendChild(passwordCell);
+
+      userTableBody.appendChild(row);
+    });
+  </script>
+</body>
+</html>

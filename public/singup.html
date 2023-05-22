@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="divlogin">
+        <div class="container">
+            <div class="divcont">
+                <form action="/register" method="POST">
+                    <h2>Registro</h2>
+                    <div class="section">   
+                        <div class="title">Username</div>
+                        <div class="field"><input type="email" class="{'error':Valida_email}" placeholder="Email" v-model="form.email" id="username" name="username"></div>
+                    </div>
+                    <div class="section">   
+                        <div class="title">Password</div>
+                        <div class="field"><input type="password" class="{'error':Valida_password}" placeholder="Password" v-model="form.password" id="password" name="password"></div>
+                    </div>
+                    <div class="section">   
+                        <div class="button"><input type="submit" value="Registrar usuario"></div>
+                        <div class="button"><a href="index.html">LogIn</a></div>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+    <script src="assets/js/vue.min.js"></script>
+    <script src="assets/js/registro.js"></script>
+</body>
+</html>
